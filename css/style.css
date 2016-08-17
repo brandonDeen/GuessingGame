@@ -1,0 +1,13 @@
+/*-----GENERAL TAGS-----*/
+
+body {
+    color: #2d2d30;
+    background-color: lightgray;
+}
+h1, h2, h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;
+    font-size: 20px;
+    color: #111;
+    text-align: center;
+}

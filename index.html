@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Guessing Game</title>
+	<!-- meta -->
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- CSS -->
+	<link rel='stylesheet' href='css/bootstrap.min.css' >
+	<link rel='stylesheet' href='css/font-awesome.min.css'>
+	<link rel='stylesheet' href='css/style.css' >
+	<!-- JS -->
+	<script src='js/jQuery.js'></script>
+	<script src='js/bootstrap.min.js'></script>
+	<script src='js/site.js'></script>
+</head>
+<body>
+	<section class='container-fluid'>
+		<h1>Welcome Brandon's Guessing Game!</h1>
+		<section id='scoreboard' class='row'></section>
+		<section id='game' class='row'>
+			
+			<section class='col-md-6'>
+				<div> <h3>Your Guesses</h3> </div>
+				<div id='playerGuesses'></div>
+				<div>
+					<input id='userGuessInput' type='number' min='1' max='1000000' class='' placeholder='Enter a Number'>
+					<button id='submitGuess' class='btn btn-default' onclick='submitGuess()'>Guess</button>
+				</div>
+			</section>
+			
+			<section id='aiGuesses' class='col-md-6'>
+				<div> <h3>My Guesses</h3> </div>
+				<div>  </div>
+			</section>
+		</section>
+		<section id='rules' class='container text-center'></section>
+	</section>
+</body>	
+</html>
