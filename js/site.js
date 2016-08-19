@@ -16,12 +16,15 @@ $(document).ready(function(){
 
 	appendRules();
 
+	$('#showHideRules').on('click', function(){
+		$('#rules').toggle();
+	});
+
 });
 
 function appendRules(){
 	$("#rules").append(
-			"<h3>Rules of the Game</h3>"
-			+"<p>You have 20 turns to guess a random number between 1 and 1,000,000 (inclusive).</p>"
+			"<p>You have 20 turns to guess a random number between 1 and 1,000,000 (inclusive).</p>"
 			+"<p>Once you guess it or you run out of turns, I will try and guess the number.</p>"
 			+"<p>Whoever guesses the random number the least number of guesses wins.</p>"
 			+"<br><br><p>Oh yeah, I will keep score in the browser in case you wanna come back and play some more!.</p>"
@@ -64,11 +67,9 @@ function loadGuessData(){
 }
 
 function displayScoreboard(scores){
-	$('#scoreboard').append(
-			"<p><h3>User: " + scores['player'] + "</h3>"
-			+"<h3>Computer: " + scores['ai'] + "</h3>"
-			+"<h3>Draws: " + scores['draw'] + "</h3></p>"
-		);
+	$('#playerScore').append(scores['player']);
+	$('#draws').append(scores['draw']);
+	$('#aiScore').append(scores['ai']);
 }
 
 function submitGuess(){
@@ -134,10 +135,10 @@ function updateScore(){
 function runAI(){
 	var hi = MAX-1;
 	var lo = MIN;
-	var aiGuess = (hi + lo) / 2;
+	var aiGuess = parseInt( (hi + lo) / 2 );
 
 	//ai guesses
-	for(var i=0; i<20; i++){	
+	for(var i=0; i<20; i++){
 		var hiOrLo = '';	
 		if( aiGuess > random ){
 			hiOrLo = "Too High"
@@ -153,8 +154,7 @@ function runAI(){
 		}
 		guessData.aiGuesses.push(aiGuess);
 		displayGuess(aiGuess, hiOrLo,false);
-
-		aiGuess = parseInt( (hi+lo)/2 )
+		aiGuess = parseInt( (hi+lo)/2 );
 	}
 	updateScore();
 

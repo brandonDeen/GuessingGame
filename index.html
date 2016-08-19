@@ -15,26 +15,46 @@
 	<script src='js/site.js'></script>
 </head>
 <body>
-	<section class='container-fluid'>
+
+	<div class='jumbotron'>
 		<h1>Welcome Brandon's Guessing Game!</h1>
-		<section id='scoreboard' class='row'></section>
-		<section id='game' class='row'>
-			
-			<section class='col-md-6'>
-				<div> <h3>Your Guesses</h3> </div>
-				<div id='playerGuesses'></div>
-				<div>
-					<input id='userGuessInput' type='number' min='1' max='1000000' class='' placeholder='Enter a Number'>
+		<div id='scoreboard' class='row'>
+			<div class='player'>
+				<h4>Win</h4>
+				<div class='scorebox' id='playerScore'></div>
+			</div>-
+			<div class='player'>
+				<h4>Draw</h4>
+				<div class='scorebox' id='draws'></div>
+			</div>-
+			<div class='player'>
+				<h4>Loss</h4>
+				<div class='scorebox' id='aiScore'></div>
+			</div>
+		</div>
+	</div>
+
+	<section class='container'>
+		<div class="panel-group row">
+
+		    <div id='player-panel' class="panel panel-info">
+		    	<div class="panel-heading">Your Guesses</div>
+		    	<div id='playerGuesses' class="panel-body"></div>
+		    	<div class='panel-footer'>
+		    		<input id='userGuessInput' type='number' min='1' max='1000000' class='' placeholder='Enter a Number'>
 					<button id='submitGuess' class='btn btn-default' onclick='submitGuess()'>Guess</button>
-				</div>
-			</section>
-			
-			<section id='aiGuesses' class='col-md-6'>
-				<div> <h3>My Guesses</h3> </div>
-				<div>  </div>
-			</section>
-		</section>
-		<section id='rules' class='container text-center'></section>
+		    	</div>
+		    </div>
+
+		    <div id='ai-panel' class="panel panel-danger">
+		    	<div class="panel-heading">My Guesses</div>
+		    	<div id='aiGuesses' class="panel-body"></div>
+		    	<div class='panel-footer'>	</div>
+		    </div>
+		</div>
+
+		<aside id='rules'></aside>
 	</section>
+
 </body>	
 </html>
