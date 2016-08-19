@@ -67,9 +67,13 @@ function loadGuessData(){
 }
 
 function displayScoreboard(scores){
+	$('#playerScore').empty();
+	$('#aiScore').empty();
+	$('#draws').empty();
+
 	$('#playerScore').append(scores['player']);
-	$('#draws').append(scores['draw']);
 	$('#aiScore').append(scores['ai']);
+	$('#draws').append(scores['draw']);
 }
 
 function submitGuess(){
@@ -126,8 +130,6 @@ function updateScore(){
 	}
 	//update scores in local storage
 	storeScores(scores);
-	//empty scoreboard
-	$("#scoreboard").empty();
 	//reload scoreboard
 	displayScoreboard(scores);
 }
