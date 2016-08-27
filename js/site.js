@@ -6,7 +6,7 @@ var MIN = 1;
 
 
 $(document).ready(function(){
-	scores = loadScores()
+	scores = loadScores();
 	displayScoreboard(scores);
 
 	guessData = loadGuessData();
@@ -24,7 +24,8 @@ $(document).ready(function(){
 
 function appendRules(){
 	$("#rules").append(
-			"<p>You have 20 turns to guess a random number between 1 and 1,000,000 (inclusive).</p>"
+			"<h4>How to Play</h4>"
+			+"<p>You have 20 turns to guess a random number between 1 and 1,000,000 (inclusive).</p>"
 			+"<p>Once you guess it or you run out of turns, I will try and guess the number.</p>"
 			+"<p>Whoever guesses the random number the least number of guesses wins.</p>"
 			+"<br><br><p>Oh yeah, I will keep score in the browser in case you wanna come back and play some more!.</p>"

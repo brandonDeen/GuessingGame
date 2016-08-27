@@ -16,9 +16,8 @@
 </head>
 <body>
 
-	<div class='jumbotron'>
+	<nav class='header'>
 		<h1>Guessing Game</h1>
-		<h5>the ultimate challange</h5>
 		<div id='scoreboard' class='row'>
 			<div class='player'>
 				<h4>Win</h4>
@@ -33,29 +32,38 @@
 				<div class='scorebox' id='aiScore'></div>
 			</div>
 		</div>
-	</div>
+	</nav>
 
-	<section class='container'>
-		<div class="panel-group row">
+	<section class='container-fluid'>
+		<section class='row'>
 
-		    <div id='player-panel' class="panel panel-info">
-		    	<div class="panel-heading">Your Guesses</div>
-		    	<div id='playerGuesses' class="panel-body"></div>
-		    	<div class='panel-footer'>
-		    		<input id='userGuessInput' type='number' min='1' max='1000000' class='' placeholder='Enter a Number'>
-					<button id='submitGuess' class='btn btn-default' onclick='submitGuess()'>Guess</button>
-		    	</div>
-		    </div>
+			<div id='rules' class='col-sm-2 sidenav'></div>
+				<br> 
+			    <div id='player-panel' class="panel panel-info col-sm-4">
+			    	<div class="panel-heading">Your Guesses</div>
+			    	<div id='playerGuesses' class="panel-body"></div>
+			    	<div class='panel-footer'>
+			    		<input id='userGuessInput' type='number' min='1' max='1000000' class='' placeholder='Enter a Number'>
+						<button id='submitGuess' class='btn btn-default' onclick='submitGuess()'>Guess</button>
+			    	</div>
+			    </div>
 
-		    <div id='ai-panel' class="panel panel-danger">
-		    	<div class="panel-heading">My Guesses</div>
-		    	<div id='aiGuesses' class="panel-body"></div>
-		    	<div class='panel-footer'>	</div>
-		    </div>
-		</div>
+			    <div class='col-sm-1 buffer'></div>
 
-		<aside id='rules'></aside>
+			    <div id='ai-panel' class="panel panel-danger col-sm-4">
+			    	<div class="panel-heading">My Guesses</div>
+			    	<div id='aiGuesses' class="panel-body"></div>
+			    	<div class='panel-footer'></div>
+			    </div>
+
+				<div class='col-sm-1 sidenav'></div>
+
+		</section>
 	</section>
+
+	<footer>
+		<p>Made by Brandon Deen <a target='_blank' href='https://github.com/brandonDeen/GuessingGame'><i class='fa fa-github'></i></a></p>
+	</footer>
 
 </body>	
 </html>
